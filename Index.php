@@ -9,7 +9,7 @@ require "Controlador/cookies.php";
 require_once "Controlador/gestioSessio.php";
 require "Model/register.php";
 
-//crea el usuari admin si no existeix
+//crea el usuari admin si no existei
 if (!usuariExisteix("admin")) {
     crearAdmin();
 }
