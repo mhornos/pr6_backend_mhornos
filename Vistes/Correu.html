@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperació de contrasenya</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+            color: #000000;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto; 
+            padding: 30px;
+            background-color: #ebebeb;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center; 
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+            color: #000000;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: bold;
+            color: #000000;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        a {
+            color: #000000;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            display: inline-block;
+            padding: 15px 30px;
+            border: 2px solid #000000;
+            border-radius: 5px;
+            margin-top: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease-in-out;
+            text-align: center;
+            background-color: #ffffff;
+
+        }
+
+        .footer {
+            font-size: 14px;
+            font-weight: bold;
+            color: #000000;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hola,</h1>
+        <h3>Per restablir la teva contrasenya, fes clic al següent enllaç:</h3>
+        <a href="{{reset_link}}">Restablir la meva contrasenya</a>
+        <h3>Aquest enllaç caducarà en una hora.</h3>
+
+        <div class="footer">
+            <p>Si no has sol·licitat aquesta acció, pots ignorar aquest correu.</p>
+        </div>
+    </div>
+</body>
+</html>

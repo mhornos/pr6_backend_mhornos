@@ -1,0 +1,362 @@
+
+
+/* font de text */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+
+/* General */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: url('../imgs/fons.jpg') no-repeat center fixed; 
+    background-size: cover; 
+    color: #333;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Navbar */
+.navbar {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.navbar button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s; /* Añadido transform para el zoom */
+}
+
+.navbar button:hover {
+    background-color: #7a7a7a;
+    transform: scale(1.05); /* Efecto de zoom suave */
+}
+
+/* Títulos */
+h1 {
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 60px; 
+
+}
+
+h3 {
+    margin-bottom: 20px;
+    color: #444;
+    text-align: left;
+}
+
+/* Formulari */
+form {
+    max-width: 400px;
+    min-width: 300px;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: transform 0.3s; /* Añadido transform para el zoom */
+}
+
+label {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="password"],
+input[type="file"],
+input[type="email"],
+input[type="submit"],
+input[type="reset"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="password"],
+input[type="file"],
+input[type="email"] {
+    background-color: #f9f9f9;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus {
+    border-color: #888;
+    outline: none;
+}
+
+/* Botons */
+input[type="submit"],
+input[type="reset"],
+button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* Añadido transform para el zoom */
+    font-size: 14px;
+    text-align: center;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+button:hover {
+    background-color: #636363;
+    transform: scale(1.05); /* Efecto de zoom suave en los botones */
+}
+
+button {
+    padding: 10px 15px;
+    margin-top: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Taula */
+table {
+    width: 30%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+table th,
+table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #434343;
+}
+
+table th {
+    background-color: #333;
+    color: #fff;
+}
+
+table tr:hover {
+    background-color: #e8e8e8;
+}
+
+/* Enllaços */
+a {
+    text-decoration: none;
+}
+
+a button {
+    width: 100%;
+    display: inline-block;
+    text-align: center;    
+}
+
+/* Estils per a la paginació */
+/* Contenedor de los artículos */
+.articles-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+/* Estilo de las cajitas */
+.article-box {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Sombra más intensa */
+    width: 450px; /* Ajustar ancho de la cajita */
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Animación al pasar el ratón */
+.article-box:hover {
+    transform: scale(1.05); /* Efecto de zoom suave */
+}
+
+/* Estilo de las imágenes dentro de las cajitas */
+.article-box img {
+    width: 105%; /* Cambiar a 100% para ocupar todo el ancho de la caja */
+    height: auto; /* Mantener proporción de la imagen */
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+/* Estilo para la paginación */
+.paginacio {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px; /* Aumentar el espacio entre la paginación y las cajitas */
+}
+
+.paginacio a,
+.paginacio strong {
+    padding: 10px 15px;
+    margin: 0 5px;
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+.paginacio a:hover {
+    background-color: #e6e6e6;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+}
+
+.paginacio strong {
+    background-color: #333;
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Salutació */
+.salutacio {
+    position: absolute; /* Posicionament absolut per col·locar-lo a la part superior esquerra */
+    top: 20px; /* Distància des de la part superior */
+    left: 20px; /* Distància des de la part esquerra */
+    background-color: #fff; /* Color de fons blanc */
+    border-radius: 8px; /* Bordes arrodonits */
+    padding: 15px; /* Espai intern */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Ombra suau */
+    z-index: 1000; /* Assegurar-se que estigui per sobre d'altres elements */
+    animation: slideIn 0.5s ease-out; /* Animació d'entrada */
+    transition: transform 0.3s; /* Animació de zoom */
+}
+
+.salutacio:hover {
+    transform: scale(1.1); /* Efecte de zoom suau al passar el ratolí */
+
+}
+
+/* Definició de l'animació */
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px); /* Comença 20 píxels més amunt */
+        opacity: 0; /* Comença invisible */
+    }
+    to {
+        transform: translateY(0); /* Acaba a la posició original */
+        opacity: 1; /* Acaba visible */
+    }
+}
+
+/* Formulario de confirmación de eliminación */
+/* Fondo borroso */
+.overlay {
+    position: fixed; /* Asegura que cubra toda la pantalla */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
+    backdrop-filter: blur(10px); /* Aplica el filtro de desenfoque */
+    z-index: 999; /* Asegura que esté por encima del contenido */
+}
+
+/* Contenedor del formulario */
+.contenidor-formulari {
+    position: fixed; /* Mantiene el formulario fijo en el centro de la pantalla */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centra el formulario */
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Asegura que el formulario esté sobre el fondo borroso */
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+}
+
+/* Estilos para los botones dentro del formulario */
+.contenidor-formulari input[type="submit"] {
+    width: auto;
+    padding: 12px 30px;
+    margin: 5px;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.contenidor-formulari input[type="submit"]:hover {
+    background-color: #636363;
+    transform: scale(1.05); /* Efecto de zoom suave */
+}
+
+/* imatge de perfil a index */
+.imatge-perfil {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.imatge-perfil img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* imatge de perfil a editarPerfil */
+.imatge-editar {
+    width: 350px; /* Aumentamos el tamaño de la imagen */
+    height: 350px; /* Aseguramos que sea cuadrada */
+    margin-right: 15px; /* Espacio a la derecha de la imagen */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Sombra suave */
+    align-content: center;
+}
+
+.imatge-editar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen se ajuste bien dentro del círculo */
+}
+
+.formularios-container {
+    display: flex; /* Utiliza Flexbox para alinear los formularios */
+    gap: 20px; /* Espacio entre los formularios */
+}
