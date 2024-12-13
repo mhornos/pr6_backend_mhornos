@@ -26,12 +26,14 @@ body {
 
 /* Navbar */
 .navbar {
-    position: absolute;
+    position: fixed;
     top: 20px;
     right: 20px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    z-index: 1000; 
+
 }
 
 .navbar button {
@@ -360,3 +362,57 @@ a button {
     display: flex; /* Utiliza Flexbox para alinear los formularios */
     gap: 20px; /* Espacio entre los formularios */
 }
+
+
+
+/* Dropdown Container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Botón principal del dropdown */
+.dropbtn {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.dropbtn:hover {
+    background-color: #7a7a7a;
+    transform: scale(1.05); /* Efecto de zoom suave */
+}
+
+/* Contenido del dropdown (inicialmente oculto) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    z-index: 1;
+    border-radius: 5px;
+    right: 0; /* Asegura que el menú se alinee al borde derecho */
+
+}
+
+/* Estilo de los enlaces dentro del dropdown */
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #7a7a7a;
+}
+
+/* Mostrar el contenido del dropdown al pasar el ratón sobre el contenedor */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+

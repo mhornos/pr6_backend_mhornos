@@ -23,13 +23,18 @@ require_once "Model/editarPerfil.php";
             <div class="imatge-perfil">
                 <img src="<?php echo htmlspecialchars(obtenirImatge($_SESSION['usuari'])); ?>" alt="">
             </div>
-            <a href="Vistes/EditarPerfil.php"><button>Editar perfil</button></a>
-            <a href="Controlador/logout.php"><button>Deslogar-se</button></a>
-            <a href="Vistes/CanviarPassw.php"><button>Canviar password</button></a>
-            <!-- mostrar només si l'usuari és "admin" -->
-            <?php if ($_SESSION['usuari'] === 'admin') { ?>
-                <a href="Vistes/Usuaris.php"><button>Gestionar usuaris</button></a><br><br>
-            <?php } ?>
+            <div class="dropdown">
+                <button class="dropbtn">Menú ▼</button>
+                <div class="dropdown-content">
+                    <a href="Vistes/EditarPerfil.php"><button>Editar perfil</button></a>
+                    <a href="Controlador/logout.php"><button>Deslogar-se</button></a>
+                    <a href="Vistes/CanviarPassw.php"><button>Canviar password</button></a>
+                    <!-- mostrar només si l'usuari és "admin" -->
+                    <?php if ($_SESSION['usuari'] === 'admin') { ?>
+                        <a href="Vistes/Usuaris.php"><button>Gestionar usuaris</button></a><br><br>
+                    <?php } ?>
+                </div>
+            </div>
         </div>
 
         <!-- 3 botons que ens envien al document corresponent per tractar les dades -->
@@ -49,8 +54,13 @@ require_once "Model/editarPerfil.php";
     <!-- si l'usuari no està logat -->
     <?php } else { ?> 
         <div class="navbar">
-            <a href="Vistes/Login.php"><button>Logar-se</button></a>
-            <a href="Vistes/Register.php"><button>Registrar-se</button></a>
+            <div class="dropdown">
+                <button class="dropbtn">Menú ▼</button>
+                <div class="dropdown-content">
+                    <a href="Vistes/Login.php"><button>Logar-se</button></a>
+                    <a href="Vistes/Register.php"><button>Registrar-se</button></a>
+                </div>
+            </div>
         </div>
     <?php } ?>
 </body>
