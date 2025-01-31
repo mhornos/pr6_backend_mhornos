@@ -5,7 +5,7 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-require "../Model/editarPerfil.php"
+require "../Model/editarPerfil.php";
 ?>
 
 <!DOCTYPE html>

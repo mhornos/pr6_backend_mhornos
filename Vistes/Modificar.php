@@ -16,8 +16,8 @@
 
     <form action="../Controlador/modificar.php" method="post">
         <table>
-            <input type="text" id="id" name="id" placeholder="Introdueix ID del vehicle a editar*">
-            <input type="text" id="marca" name="marca" placeholder="Edita la marca">
+            <input type="text" id="id" name="id" placeholder="Introdueix ID del vehicle a editar*" value="<?php echo htmlspecialchars($id ?? ''); ?>">
+            <input type="text" id="marca" name="marca" placeholder="Edita la marca" value="<?php echo htmlspecialchars($marca ?? ''); ?>">
             <input type="text" id="model" name="model" placeholder="Edita el model" value="<?php echo htmlspecialchars($model ?? ''); ?>">
             <input type="number" id="any" name="any" placeholder="Edita l'any" value="<?php echo htmlspecialchars($any ?? ''); ?>" max="<?php echo date('Y'); ?>">
             <input type="text" id="color" name="color" placeholder="Edita el color" value="<?php echo htmlspecialchars($color ?? ''); ?>">

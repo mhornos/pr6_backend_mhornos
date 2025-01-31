@@ -5,6 +5,7 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
+
 // incloem el model
 require_once dirname(__DIR__) . '/Model/llistaArticles.php';
 
@@ -104,27 +105,41 @@ echo "</div><br>";
 echo "<div class='articles-container'>";
 
 // mostrar articles
-if (count($articles) > 0) {
-    foreach ($articles as $article) {
-        echo "<div class='article-box'>";
-        echo "<p>" . htmlspecialchars($article['ID']) . "</p>";  
-        echo "<h3>" . htmlspecialchars($article['marca']) . " " . $article['model'] .  "</h3>";
-        echo "<p><strong>Any:</strong> " . htmlspecialchars($article['any']) . "</p>";
-        echo "<p><strong>Color:</strong> " . htmlspecialchars($article['color']) . "</p>";
-        echo "<p><strong>Matrícula:</strong> " . htmlspecialchars($article['matricula']) . "</p>";
-        echo "<p><strong>Mecànic:</strong> " . htmlspecialchars($article['nom_usuari']) . "</p>";
-        echo "<p><strong>Ciutat:</strong> " . htmlspecialchars($article['ciutat']) . "</p>";
-        
-        if (!empty($article['imatge'])) {
-            echo "<img src='" . htmlspecialchars($article['imatge']) . "' width='150'>";
-        } else {
-            echo "<p><br>No hi ha imatge</p>";
+    if (count($articles) > 0) {
+        foreach ($articles as $article) {
+            echo "<div class='article-box'>";
+            echo "<p>" . htmlspecialchars($article['ID']) . "</p>";  
+            echo "<h3>" . htmlspecialchars($article['marca']) . " " . $article['model'] .  "</h3>";
+            echo "<p><strong>Any:</strong> " . htmlspecialchars($article['any']) . "</p>";
+            echo "<p><strong>Color:</strong> " . htmlspecialchars($article['color']) . "</p>";
+            echo "<p><strong>Matrícula:</strong> " . htmlspecialchars($article['matricula']) . "</p>";
+            echo "<p><strong>Mecànic:</strong> " . htmlspecialchars($article['nom_usuari']) . "</p>";
+            echo "<p><strong>Ciutat:</strong> " . htmlspecialchars($article['ciutat']) . "</p>";
+            
+            if (!empty($article['imatge'])) {
+                echo "<img src='" . htmlspecialchars($article['imatge']) . "' width='150'>";
+            } else {
+                echo "<p><br>No hi ha imatge</p>";
+            }
+
+            echo '<form action="Controlador/articles.php" method="post" style="display:inline;">
+                <input type="hidden" name="id" value="' . htmlspecialchars($article['ID']) . '">
+                <input type="hidden" name="marca" value="' . htmlspecialchars($article['marca']) . '">
+                <input type="hidden" name="model" value="' . htmlspecialchars($article['model']) . '">
+                <input type="hidden" name="any" value="' . htmlspecialchars($article['any']) . '">
+                <input type="hidden" name="color" value="' . htmlspecialchars($article['color']) . '">
+                <input type="hidden" name="matricula" value="' . htmlspecialchars($article['matricula']) . '">
+                <input type="hidden" name="imatge" value="' . htmlspecialchars($article['imatge']) . '">
+                <button type="submit" name="boton" value="Editar">Editar</button>
+                <button type="submit" name="boton" value="Eliminar">Eliminar</button>
+                <button type="submit" name="boton" value="QR">QR</button>
+            </form>';
+
+            echo "</div>";
         }
-        echo "</div>";
+    } else {
+        echo "<p>No s'han trobat vehicles.</p>";
     }
-} else {
-    echo "<p>No s'han trobat vehicles.</p>";
-}
 
 echo "</div>";
 ?>

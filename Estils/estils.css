@@ -147,7 +147,6 @@ button {
 
 /* Taula */
 table {
-    width: 30%;
     border-collapse: collapse;
     margin-top: 20px;
     background-color: #fff;
@@ -175,11 +174,7 @@ a {
     text-decoration: none;
 }
 
-a button {
-    width: 100%;
-    display: inline-block;
-    text-align: center;    
-}
+
 
 /* Estils per a la paginació */
 /* Contenedor de los artículos */

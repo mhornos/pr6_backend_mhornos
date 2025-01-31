@@ -49,7 +49,7 @@ $usuaris = obtenirUsuaris();
                 <?php }
             } else { ?>
                 <tr>
-                    <td colspan="4">No hi ha cap usuari registrat.</td>
+                    <td colspan="10">No hi ha cap usuari registrat.</td>
                 </tr>
             <?php } ?>
         </tbody>

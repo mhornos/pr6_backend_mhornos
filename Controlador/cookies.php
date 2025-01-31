@@ -19,8 +19,8 @@ function obtenirCookie($nom) {
 
 <?php
 //salutacio al usuari
-if (obtenirCookie("salutacio")): ?>
-        <div class="salutacio">
-            Benvingut, <?php echo htmlspecialchars($_SESSION["usuari"]); ?>! 👋
-        </div>
-<?php endif; ?>
+if (obtenirCookie("salutacio") && isset($_SESSION["usuari"])) { ?>
+    <div class="salutacio">
+        Benvingut, <?php echo htmlspecialchars($_SESSION["usuari"]); ?>! 👋
+    </div>
+<?php }

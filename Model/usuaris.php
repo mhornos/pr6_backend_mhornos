@@ -10,7 +10,7 @@ function obtenirUsuaris() {
         $consulta->execute();
         return $consulta->fetchAll(PDO::FETCH_ASSOC);
     } catch (PDOException $e) {
-        echo "Error de connexió: " . $e->getMessage() . " ❌";
+        echo "error de connexió: " . $e->getMessage() . " ❌";
     }
 }
 
@@ -19,10 +19,6 @@ function esborrarUsuari($id) {
     try {
         require "connexio.php";
         
-        $consultaExistencia = $connexio->prepare("SELECT * FROM usuaris WHERE id = :id");
-        $consultaExistencia->bindParam(':id', $id);
-        $consultaExistencia->execute();
-
         if (!isset($_POST['confirmar'])) {
             include_once "../Vistes/confirmEliminarusuari.php";
         }
@@ -43,7 +39,7 @@ function esborrarUsuari($id) {
         }
 
     } catch (PDOException $e) {
-        echo "Error de conexión: " . $e->getMessage() . " ❌";
+        echo "error de conexió: " . $e->getMessage() . " ❌";
     }
 }
 ?>

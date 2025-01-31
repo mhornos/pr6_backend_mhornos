@@ -24,7 +24,7 @@ if (!usuariExisteix("admin")) {
         <link rel="stylesheet" href="Estils\estils.css">
     </head>
     <body>
-        <h1>Mecànic Admin de Garatges</h1><br>
+        <h1>Gestor Mecànic de Vehicles</h1><br>
     </body>
 </html>
 
