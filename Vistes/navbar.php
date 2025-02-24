@@ -21,7 +21,7 @@ require_once "Model/editarPerfil.php";
     <?php if (isset($_SESSION['usuari'])) { ?> 
         <div class="navbar">
             <div class="imatge-perfil">
-                <img src="<?php echo htmlspecialchars(obtenirImatge($_SESSION['usuari'])); ?>" alt="">
+                <img src="<?php echo htmlspecialchars(obtenirImatge($_SESSION['usuari'])); ?>" alt="Foto de perfil de l'usuari">
             </div>
             <div class="dropdown">
                 <button class="dropbtn">Menú ▼</button>

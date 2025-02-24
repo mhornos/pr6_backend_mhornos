@@ -115,8 +115,7 @@ input[type="text"]:focus,
 input[type="number"]:focus,
 input[type="password"]:focus,
 input[type="email"]:focus {
-    border-color: #888;
-    outline: none;
+    outline: 6px solid #0077ff
 }
 
 /* Botons */
@@ -137,6 +136,13 @@ input[type="reset"]:hover,
 button:hover {
     background-color: #636363;
     transform: scale(1.05); /* Efecto de zoom suave en los botones */
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+button:focus {
+    outline: 6px solid #0077ff
+
 }
 
 button {
@@ -411,3 +417,7 @@ a {
     display: block;
 }
 
+button:focus, a:focus {
+    outline: 6px solid #0077ff
+  }
+  

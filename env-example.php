@@ -4,7 +4,7 @@
 
 define('DB_VAR', [
     'DB_HOST' => 'localhost',
-    'DB_NAME' => 'pt05_miguel_hornos',
+    'DB_NAME' => 'pt06_miguel_hornos',
     'DB_USER' => 'root',
     'DB_PASSWORD' => '',
 ]);

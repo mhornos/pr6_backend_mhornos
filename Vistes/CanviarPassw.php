@@ -11,12 +11,20 @@
 <body>
     <h2>Canviar contrasenya:</h2><br>
     <form action="../Controlador/canviarPassw.php" method="post">
-    <input type="password" id="contrasenya" name="contrasenya" placeholder="Contrasenya actual"> 
-    <input type="password" id="contrasenyaNova1" name="contrasenyaNova1" placeholder="Nova contrasenya">
-    <input type="password" id="contrasenyaNova2" name="contrasenyaNova2" placeholder="Confirmació nova contrasenya">
+    <label for="contrasenya">Contrasenya actual:</label>
+    <input type="password" id="contrasenya" name="contrasenya">
+
+    <label for="contrasenyaNova1">Nova contrasenya:</label>
+    <input type="password" id="contrasenyaNova1" name="contrasenyaNova1" >
+
+    <label for="contrasenyaNova2">Confirmació nova contrasenya:</label>
+    <input type="password" id="contrasenyaNova2" name="contrasenyaNova2">
+
     <p>La contrasenya ha de tenir almenys 8 caràcters, un número, una majúscula i una minúscula.</p><br>
+
     <input type="submit" name="Canviar" value="Canviar">
     </form>
+
     <a href="../Index.php?pagina=<?php echo isset($_GET['pagina']) ? $_GET['pagina'] : 1; ?>">
             <button>Tornar a inici</button>
         </a>
