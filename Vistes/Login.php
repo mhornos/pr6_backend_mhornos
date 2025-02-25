@@ -15,13 +15,24 @@ require "../Controlador/cookies.php";
 <body>
     <h2>Inicia sessió:</h2><br>
     <form action="../Controlador/login.php" method="post">
-    <input type="text" id="usuari" name="usuari" placeholder="Usuari" value="<?php echo htmlspecialchars(obtenirCookie('usuari') ?? ''); ?>"> 
-    <input type="password" id="contrasenya" name="contrasenya" placeholder="Contrasenya" value="<?php echo htmlspecialchars(obtenirCookie('contrasenya') ?? ''); ?>"> 
+    <label for="usuari">Usuari</label>
+    <input type="text" id="usuari" name="usuari" placeholder="Introdueix l'usuari" value="<?php echo htmlspecialchars(obtenirCookie('usuari') ?? ''); ?>"> 
+
+    <label for="contrasenya">Contrasenya</label>
+    <input type="password" id="contrasenya" name="contrasenya" placeholder="Introdueix la contrasenya" value="<?php echo htmlspecialchars(obtenirCookie('contrasenya') ?? ''); ?>"> 
+
     <input type="submit" name="Login" value="Login">
-    <input type="checkbox" name="remember_me" value="1" <?php echo isset($_COOKIE["usuari"]) ? "checked" : ""; ?>> Recordar-me </br>
+    
+    <label for="remember_me">
+        <input type="checkbox" name="remember_me" id="remember_me" value="1" <?php echo isset($_COOKIE["usuari"]) ? "checked" : ""; ?>> 
+        Recordar-me
+    </label>
+    
+    <br>
     No tinc compte: <a href="Register.php"> Crea un compte </a><br>
     He oblidat la contrasenya: <a href="forgotPassw.php"> Recuperar-la </a>
-    </form>
+</form>
+
     <a href="../Index.php?pagina=<?php echo isset($_GET['pagina']) ? $_GET['pagina'] : 1; ?>">
             <button>Tornar a inici</button>
         </a>

@@ -86,21 +86,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
     <br><h2>Inicia sessió:</h2>
-    <br><form method="POST">
-        <input type="text" name="usuari" placeholder="Usuari" value="<?php echo htmlspecialchars($usuari ?? ''); ?>">
-        <input type="password" name="contrasenya" placeholder="Contrasenya" value="<?php echo htmlspecialchars($contrasenya ?? ''); ?>">
+    <br>
+    <form method="POST">
+        <label for="usuari">Usuari</label>
+        <input type="text" name="usuari" id="usuari" placeholder="Introudeix l'usuari" value="<?php echo htmlspecialchars($usuari ?? ''); ?>">
+        
+        <label for="contrasenya">Contrasenya</label>
+        <input type="password" name="contrasenya" id="contrasenya" placeholder="Introudeix la contrasenya" value="<?php echo htmlspecialchars($contrasenya ?? ''); ?>">
         
         <?php if (isset($_SESSION['intentsFallats']) && $_SESSION['intentsFallats'] >= 3) { ?>
-        <div class="g-recaptcha" data-sitekey="6LeX8Y0qAAAAAN_VXumrgWfMGgoTqfD5XvZ4NZp0"></div>
-        <?php } ?> <br>
-
-        <input type="submit" name="Login" value="Login">
-        <input type="checkbox" name="remember_me" value="1" <?php echo isset($_COOKIE["usuari"]) ? "checked" : ""; ?>> Recordar-me </br>
-        No tinc compte: <a href="../Vistes/Register.php"> Crea un compte </a><br>
-        He oblidat la contrasenya: <a href="../Vistes/forgotPassw.php"> Recuperar-la </a></br></br>
-    
+            <div class="g-recaptcha" data-sitekey="6LeX8Y0qAAAAAN_VXumrgWfMGgoTqfD5XvZ4NZp0"></div>
+        <?php } ?>
         
-    </form> 
+        <br>
+        
+        <input type="submit" name="Login" value="Login">
+        
+        <label for="remember_me">
+            <input type="checkbox" name="remember_me" id="remember_me" value="1" <?php echo isset($_COOKIE["usuari"]) ? "checked" : ""; ?>> 
+            Recordar-me
+        </label>
+        
+        <br>
+        No tinc compte: <a href="../Vistes/Register.php"> Crea un compte </a><br>
+        He oblidat la contrasenya: <a href="../Vistes/forgotPassw.php"> Recuperar-la </a><br><br>
+    </form>
+
     
     <br><a href="../Index.php?pagina=<?php echo isset($_GET['pagina']) ? $_GET['pagina'] : 1; ?>">
         <button>Tornar a inici</button>

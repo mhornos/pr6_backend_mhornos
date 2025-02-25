@@ -14,7 +14,8 @@
 
     <form action="../Controlador/esborrar.php" method="post">
         <table>
-        <input type="text" id="id" name="id" placeholder="Introdueix ID del teu vehicle a eliminar*" value="<?php echo htmlspecialchars($imatge ?? ''); ?>"> <br/>
+        <label for="id">ID:</label>
+        <input type="text" id="id" name="id" placeholder="Introdueix ID del teu vehicle a eliminar" value="<?php echo htmlspecialchars($imatge ?? ''); ?>"> <br/>
 
         <input type="submit" value="Eliminar" name="Enviar">
         <input type="reset" value="Buidar">

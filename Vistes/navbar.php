@@ -17,7 +17,7 @@ require_once "Model/editarPerfil.php";
 </head>
 <body>
     <a href="#main" class="skip-link">Saltar al contingut</a>
-
+    
     <!--si l'usuari está logat -->
     <?php if (isset($_SESSION['usuari'])) { ?> 
         <div class="navbar">
@@ -39,33 +39,33 @@ require_once "Model/editarPerfil.php";
             </div>
         </div>
         
-        <main id="main">
-            <!-- 3 botons que ens envien al document corresponent per tractar les dades -->
-            <h3>Que vols fer?</h3> 
-            <a href="Vistes/Inserir.php?pagina=<?php echo isset($_GET['pagina']) ? $_GET['pagina'] : 1; ?>"> 
-                <button>Inserir vehicle</button>
-            </a><br>
-            <a href="Vistes/Modificar.php?pagina=<?php echo isset($_GET['pagina']) ? $_GET['pagina'] : 1; ?>">
-                <button>Modificar vehicle</button>
-            </a><br>
-            <a href="Vistes/Esborrar.php?pagina=<?php echo isset($_GET['pagina']) ? $_GET['pagina'] : 1; ?>">
-                <button>Esborrar vehicle</button>
-            </a><br><br>
+    <main id="main">
+        <!-- 3 botons que ens envien al document corresponent per tractar les dades -->
+        <h3>Que vols fer?</h3> 
+        <a href="Vistes/Inserir.php?pagina=<?php echo isset($_GET['pagina']) ? $_GET['pagina'] : 1; ?>"> 
+            <button>Inserir vehicle</button>
+        </a><br>
+        <a href="Vistes/Modificar.php?pagina=<?php echo isset($_GET['pagina']) ? $_GET['pagina'] : 1; ?>">
+            <button>Modificar vehicle</button>
+        </a><br>
+        <a href="Vistes/Esborrar.php?pagina=<?php echo isset($_GET['pagina']) ? $_GET['pagina'] : 1; ?>">
+            <button>Esborrar vehicle</button>
+        </a><br><br>
         
         
 
-    <!-- si l'usuari no està logat -->
-    <?php } else { ?> 
-        <div class="navbar">
-            <div class="dropdown">
-                <button class="dropbtn">Menú ▼</button>
-                <div class="dropdown-content">
-                    <a href="Vistes/Login.php"><button>Logar-se</button></a>
-                    <a href="Vistes/Register.php"><button>Registrar-se</button></a>
+        <!-- si l'usuari no està logat -->
+        <?php } else { ?> 
+            <div class="navbar">
+                <div class="dropdown">
+                    <button class="dropbtn">Menú ▼</button>
+                    <div class="dropdown-content">
+                        <a href="Vistes/Login.php"><button>Logar-se</button></a>
+                        <a href="Vistes/Register.php"><button>Registrar-se</button></a>
+                    </div>
                 </div>
             </div>
-        </div>
-    <?php } ?>
+        <?php } ?>
     </main>
 </body>
 </html>
