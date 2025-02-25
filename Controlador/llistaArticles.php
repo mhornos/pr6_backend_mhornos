@@ -117,7 +117,7 @@ echo "<div class='articles-container'>";
             echo "<p><strong>Ciutat:</strong> " . htmlspecialchars($article['ciutat']) . "</p>";
             
             if (!empty($article['imatge'])) {
-                echo "<img src='" . htmlspecialchars($article['imatge']) . "' width='150'>";
+                echo "<img src='" . htmlspecialchars($article['imatge']) . "' width='150' alt='Imatge de l'article'>";
             } else {
                 echo "<p><br>No hi ha imatge</p>";
             }

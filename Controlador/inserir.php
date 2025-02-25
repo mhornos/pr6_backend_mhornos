@@ -38,8 +38,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // mostrem tots els errors trobats en el procés de validació
     foreach ($errors as $error) {
-        echo "<p>$error</p>";
+        echo "<p><span class='error'>$error</p>";
     }
+    echo "<br>";
 }
 ?>
 

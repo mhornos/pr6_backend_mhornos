@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $errors = [];
 
     // si falta l'id mostrem un missatge d'error
-    if (empty($id)) {
+    if (empty($id)) {   
         $errors[] = "falta l'ID ❌";
     }
     // si la matrícula té més de 12 dígits mostrem missatge d'error

@@ -45,7 +45,7 @@ function editarUsuari($usuari, $correu, $ciutat, $imatge){
 
         if ($consulta->execute()) {
             if ($consulta->rowCount() > 0) {
-                echo "usuario editat correctament ✅";
+                echo "usuari editat correctament ✅";
                 $_SESSION['usuari'] = $usuari;
             } else {
                 $errorInfo = $consulta->errorInfo();

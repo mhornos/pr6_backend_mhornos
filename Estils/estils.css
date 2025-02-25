@@ -421,3 +421,20 @@ button:focus, a:focus {
     outline: 6px solid #0077ff
   }
   
+
+  .skip-link {
+    position: absolute;
+    top: -40px; 
+    left: 0;
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    z-index: 100;
+  }
+  
+  .skip-link:focus {
+    top: 90px;
+    margin-left: 20px;
+  }
+  

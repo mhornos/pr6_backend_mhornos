@@ -16,6 +16,7 @@ require_once "Model/editarPerfil.php";
     <title>mhornos</title>
 </head>
 <body>
+    <a href="#main" class="skip-link">Saltar al contingut</a>
 
     <!--si l'usuari está logat -->
     <?php if (isset($_SESSION['usuari'])) { ?> 
@@ -37,19 +38,20 @@ require_once "Model/editarPerfil.php";
                 </div>
             </div>
         </div>
-
-        <!-- 3 botons que ens envien al document corresponent per tractar les dades -->
-        <h3>Que vols fer?</h3> 
-        <a href="Vistes/Inserir.php?pagina=<?php echo isset($_GET['pagina']) ? $_GET['pagina'] : 1; ?>"> 
-            <button>Inserir vehicle</button>
-        </a><br>
-        <a href="Vistes/Modificar.php?pagina=<?php echo isset($_GET['pagina']) ? $_GET['pagina'] : 1; ?>">
-            <button>Modificar vehicle</button>
-        </a><br>
-        <a href="Vistes/Esborrar.php?pagina=<?php echo isset($_GET['pagina']) ? $_GET['pagina'] : 1; ?>">
-            <button>Esborrar vehicle</button>
-        </a><br><br>
-
+        
+        <main id="main">
+            <!-- 3 botons que ens envien al document corresponent per tractar les dades -->
+            <h3>Que vols fer?</h3> 
+            <a href="Vistes/Inserir.php?pagina=<?php echo isset($_GET['pagina']) ? $_GET['pagina'] : 1; ?>"> 
+                <button>Inserir vehicle</button>
+            </a><br>
+            <a href="Vistes/Modificar.php?pagina=<?php echo isset($_GET['pagina']) ? $_GET['pagina'] : 1; ?>">
+                <button>Modificar vehicle</button>
+            </a><br>
+            <a href="Vistes/Esborrar.php?pagina=<?php echo isset($_GET['pagina']) ? $_GET['pagina'] : 1; ?>">
+                <button>Esborrar vehicle</button>
+            </a><br><br>
+        
         
 
     <!-- si l'usuari no està logat -->
@@ -64,5 +66,6 @@ require_once "Model/editarPerfil.php";
             </div>
         </div>
     <?php } ?>
+    </main>
 </body>
 </html>

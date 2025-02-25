@@ -59,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //es mostra els errors o el missatge de tot correcte
     if (!empty($errors)) {
         foreach ($errors as $error) {
-            echo "<p>$error</p>";
+            echo "<p><span class='error'>$error</p>";
         }
     } else {
         echo "<p>t'hem enviat un correu per recuperar la teva password ✅</p> ";
