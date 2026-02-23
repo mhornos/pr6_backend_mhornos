@@ -1,3 +1,8 @@
 RewriteEngine On
 ErrorDocument 404 /Vistes/404.html
 
+# bloquear acceso directo a carpetas sensibles
+RewriteRule ^lib/ - [F,L]
+
+# bloquear acceso directo a env.php
+RewriteRule ^env\.php$ - [F,L]

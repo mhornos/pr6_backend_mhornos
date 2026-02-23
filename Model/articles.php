@@ -23,8 +23,10 @@ function eliminarVehicle($id){
     try {
         require "connexio.php";
         
+         // si aún no ha confirmado, solo mostramos confirmación y salimos
         if (!isset($_POST['confirmar'])) {
             include_once "../Vistes/confirmEsborrar.php";
+            return;
         }
 
     if (isset($_POST['confirmar'])) {
@@ -33,7 +35,7 @@ function eliminarVehicle($id){
             $consultaEliminar->bindParam(':id', $id);
 
             if ($consultaEliminar->execute()) {
-                echo "article amb ID " . htmlspecialchars($id) . " eliminat correctament ✅";
+                return "article amb ID " . htmlspecialchars($id) . " eliminat correctament ✅";
             } else {
                 echo "error al eliminar article ❌";
             }

@@ -28,7 +28,7 @@ if ($paginaActual < 1) {
 }
 
 // obtenir el criteri d'ordenació
-$criteriOrdenacio = isset($_GET['orden']) ? $_GET['orden'] : '';
+$criteriOrdenacio = isset($_GET['orden']) ? $_GET['orden'] : 'id_desc';
 // comprovar si l'usuari està loguejat
 $usuariLoguejat = $_SESSION['usuari'] ?? null;
 
@@ -62,7 +62,8 @@ echo "</select>";
 echo "<label for='orden'>Ordenar per:</label>";
 echo "<select name='orden' id='orden'>";
 $opcionsOrdenacio = [
-    '' => 'Predeterminat',
+    'id_desc' => 'ID (Descendent)',
+    'id_asc' => 'ID (Ascendent)',
     'any_asc' => 'Any (Ascendent)',
     'any_desc' => 'Any (Descendent)',
     'marca_asc' => 'Marca (Ascendent)',
@@ -75,7 +76,7 @@ foreach ($opcionsOrdenacio as $valor => $etiqueta) {
     echo "<option value='$valor' $seleccionat>$etiqueta</option>";
 }
 echo "</select>";
-echo "<button type='submit'>Aplicar</button>";
+echo "<button class='aplicar-btn' type='submit'>Aplicar</button>";
 echo "</form>";
 echo "</div>";
 
@@ -122,18 +123,27 @@ echo "<div class='articles-container'>";
                 echo "<p><br>No hi ha imatge</p>";
             }
 
-            echo '<form action="Controlador/articles.php" method="post" style="display:inline;">
+            // esto es para guardar la URL actual para volver después de eliminar
+            $returnTo = $_SERVER['REQUEST_URI'];
+
+            echo '<form class="sense-fons" action="Controlador/articles.php" method="post" style="display:inline;">
+                <input type="hidden" name="return_to" value="' . htmlspecialchars($returnTo) . '">
                 <input type="hidden" name="id" value="' . htmlspecialchars($article['ID']) . '">
                 <input type="hidden" name="marca" value="' . htmlspecialchars($article['marca']) . '">
                 <input type="hidden" name="model" value="' . htmlspecialchars($article['model']) . '">
                 <input type="hidden" name="any" value="' . htmlspecialchars($article['any']) . '">
                 <input type="hidden" name="color" value="' . htmlspecialchars($article['color']) . '">
                 <input type="hidden" name="matricula" value="' . htmlspecialchars($article['matricula']) . '">
-                <input type="hidden" name="imatge" value="' . htmlspecialchars($article['imatge']) . '">
-                <button type="submit" name="boton" value="Editar">Editar</button>
-                <button type="submit" name="boton" value="Eliminar">Eliminar</button>
-                <button type="submit" name="boton" value="QR">QR</button>
-            </form>';
+                <input type="hidden" name="imatge" value="' . htmlspecialchars($article['imatge']) . '">';
+
+                if (!empty($usuariLoguejat)) {
+                    echo '
+                    <button type="submit" name="boton" value="Editar">Editar</button>
+                    <button type="submit" name="boton" value="Eliminar">Eliminar</button>
+                    ';
+                }
+                echo "<button type='submit' name='boton' value='QR'>QR</button>";
+                echo '</form>';
 
             echo "</div>";
         }

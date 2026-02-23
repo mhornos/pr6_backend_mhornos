@@ -24,10 +24,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 include_once "../Vistes/Modificar.php";
                 break;
             }
-            case 'Eliminar':{
-                echo "eliminar: " .  $id;
+            case 'Eliminar': {
                 eliminarVehicle($id);
-                include_once "../Vistes/Articles.php";
+
+                if (isset($_POST['confirmar'])) {
+                    $returnTo = $_POST['return_to'] ?? '../Index.php';
+
+                    if (str_starts_with($returnTo, '/')) {
+                        header("Location: $returnTo");
+                    } else {
+                        header("Location: ../Index.php");
+                    }
+                    exit;
+                }
                 break;
             }
             case 'QR':{

@@ -48,6 +48,8 @@ function obtenirArticles($paginaActual, $resultatsPerPagina, $criteriOrdenacio, 
         
         // mapa d'ordenació segons els criteris especificats
         $mapaOrdenacio = [
+            'id_desc' => 'ID DESC',
+            'id_asc' => 'ID ASC',
             'any_asc' => 'any ASC',
             'any_desc' => 'any DESC',
             'marca_asc' => 'marca ASC',
@@ -57,7 +59,7 @@ function obtenirArticles($paginaActual, $resultatsPerPagina, $criteriOrdenacio, 
         ];
         
         // si no s'ha passat un criteri d'ordenació, no afegir ORDER BY
-        $ordenacio = $criteriOrdenacio ? $mapaOrdenacio[$criteriOrdenacio] : ''; 
+        $ordenacio = $mapaOrdenacio[$criteriOrdenacio] ?? 'ID DESC';
         
         // consulta SQL per obtenir els articles amb les relacions corresponents a usuaris
         $consulta = "SELECT a.ID AS articleID, a.*, u.ID AS userID, u.ciutat FROM article a LEFT JOIN usuaris u ON a.nom_usuari = u.nombreUsuario WHERE 1=1";

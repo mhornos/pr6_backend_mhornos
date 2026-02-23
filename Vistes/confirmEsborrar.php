@@ -10,9 +10,12 @@
     <div class="overlay"></div> 
     <div class="contenidor-formulari">
         <h2>Estàs segur que vols eliminar el vehicle amb ID <?php echo htmlspecialchars($id); ?>?</h2>
-        <form action="" method="post">
+        <form action="../Controlador/articles.php" method="post">
             <input type="hidden" name="id" value="<?php echo htmlspecialchars($id); ?>">
-            <input type="hidden" name="Enviar" value="Eliminar">
+            <input type="hidden" name="boton" value="Eliminar">
+
+            <input type="hidden" name="return_to" value="<?php echo htmlspecialchars($_POST['return_to'] ?? '../Index.php'); ?>">
+
             <div class="buttons-container">
                 <input type="submit" name="confirmar" value="Si" class="confirm-btn">
                 <input type="submit" name="confirmar" value="No" class="cancel-btn">

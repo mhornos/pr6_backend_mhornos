@@ -50,9 +50,9 @@ INSERT INTO `article` (`marca`, `model`, `any`, `color`, `matricula`, `nom_usuar
 ('Volkswagen', 'Polo', '2008', 'Blau', '3568JMG', 'Hector', 'https://www.km77.com/media/fotos/volkswagen_polo_2005_1854_1.jpg'),
 ('BMW', 'e90 320d','2006', 'Negre', '6733DGS', 'Miguel', 'https://www.largus.fr/images/styles/max_1300x1300/public/images/top-ventes-occasion-2016-07.jpg?itok=qlbyDvaA'),
 ('Volkswagen', 'Kombi', '1966', 'Blau', '6434DSA', 'Frank', 'https://a.ccdn.es/cnet/2023/06/15/55373819/682216819_g.jpg'),
-('Dodge', 'Challenger', '2015', 'Negre', '0954OIS', 'Frank', 'https://www.buscocoches.com/data/vehicles/76563579714E32BD907FCE57C12CA61B@1706013716425@690x460-adjust_middle.jpg'),
+('Dodge', 'Challenger', '2015', 'Negre', '0954OIS', 'Frank', 'https://media.carsandbids.com/cdn-cgi/image/width=2080,quality=70/da4b9237bacccdf19c0760cab7aec4a8359010b0/photos/3zm5mLY4-NE0s9xv9qKZ2-Vx6AUT83DW.jpg?t=168629211529'),
 ('Mazda', 'Mx5', '1997', 'Vermell', '4321KKL', 'Hector', 'https://images.classic.com/vehicles/d6e13b05eef5cda655d726d7b4631f31.jpeg?ar=16%3A9&fit=crop&w=600'),
-('Porsche', 'GT3 RS', '2019', 'Gris', '9999FSA', 'Miguel', 'https://images0.autocasion.com/unsafe/origxorig/ad/19/1281/4bf586922f5544159059695d4c1fdfb1460b6101.jpeg'),
+('Porsche', 'GT3 RS', '2019', 'Gris', '9999FSA', 'Miguel', 'https://bringatrailer.com/wp-content/uploads/2024/01/2019_porsche_911-gt3-rs_dsc00283_150fef-98211.jpg'),
 ('Lexus', 'LFA V10', '2011', 'Blanc', '1282AOI', 'Frank', 'https://periodismodelmotor.com/venta-lexus-lfa-2011-6-000-km/337385/venta-lexus-lfa-2011/');
 
 
