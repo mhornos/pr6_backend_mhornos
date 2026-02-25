@@ -7,13 +7,16 @@ if (session_status() === PHP_SESSION_NONE) {
 
 require "../Model/editarPerfil.php";
 
+    $usuariActual = $_SESSION['usuari'];
+
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $usuari = $_POST["usuari"] ?? null;
     $correu = $_POST["correu"] ?? null;
     $ciutat = $_POST["ciutat"] ?? null;
     $imatge = $_POST["imatge"] ?? null;
 
-    $usuariActual = $_SESSION['usuari'];
+    
     $correuActual = obtenirCorreu($usuariActual); 
     $ciutatActual = obtenirCiutat($usuariActual); 
     $imatgeActual = obtenirImatge($usuariActual);

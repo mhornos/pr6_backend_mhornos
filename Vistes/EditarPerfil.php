@@ -6,6 +6,16 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 require "../Model/editarPerfil.php";
+
+$usuariActual = $_SESSION['usuari'] ?? null;
+
+if ($usuariActual) {
+    $usuari = $usuariActual;
+    $correu = obtenirCorreu($usuariActual);
+    $ciutat = obtenirCiutat($usuariActual);
+    $imatge = obtenirImatgeRaw($usuariActual);
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +31,7 @@ require "../Model/editarPerfil.php";
     
     <form action="../Controlador/editarPerfil.php" method="post">
     <div class="imatge-editar">
-        <img src="<?php echo htmlspecialchars(obtenirImatgeEdicio($_SESSION['usuari'])); ?>" alt="Imatge de perfil">
+        <img src="<?php echo htmlspecialchars(obtenirImatgeEdicio($_SESSION['usuari']) ?: "../imgs/senseFoto.png"); ?>" alt="Imatge de perfil">
     </div><br>
 
     <label for="usuari">Editar nom d'usuari:</label>

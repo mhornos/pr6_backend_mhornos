@@ -123,7 +123,7 @@ input[type="text"]:focus,
 input[type="number"]:focus,
 input[type="password"]:focus,
 input[type="email"]:focus {
-    outline: 6px solid #0077ff
+    outline: 3px solid #0077ff
 }
 
 /* Botons */
@@ -149,7 +149,7 @@ button:hover {
 input[type="submit"]:hover,
 input[type="reset"]:hover,
 button:focus {
-    outline: 6px solid #0077ff
+    outline: 3px solid #0077ff
 
 }
 
@@ -402,7 +402,6 @@ a {
     display: none;
     position: absolute;
     background-color: #333;
-    height: 300px;
     min-width: 170px;
     z-index: 1;
     border-radius: 5px;
@@ -428,7 +427,7 @@ a {
 }
 
 button:focus, a:focus {
-    outline: 6px solid #0077ff
+    outline: 3px solid #0077ff
   }
   
 

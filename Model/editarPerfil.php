@@ -137,4 +137,20 @@ function obtenirImatgeEdicio($usuari){
         }
 }
 
+// retorna la URL real guardada en BD (sin fallback)
+function obtenirImatgeRaw($usuari){
+    try {
+        require "connexio.php";
+
+        $consulta = $connexio->prepare("SELECT imatge FROM usuaris WHERE nombreUsuario = :usuari");
+        $consulta->bindParam(':usuari', $usuari);
+        $consulta->execute();
+
+        $imatge = $consulta->fetchColumn();
+        return $imatge ?: ''; // si es null o "", devolvemos ""
+    } catch (PDOException $e) {
+        return '';
+    }
+}
+
 ?>

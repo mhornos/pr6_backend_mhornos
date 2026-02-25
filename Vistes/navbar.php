@@ -33,7 +33,7 @@ require_once "Model/editarPerfil.php";
                     <a href="Controlador/logout.php"><button>Deslogar-se</button></a>
                     <!-- mostrar només si l'usuari és "admin" -->
                     <?php if ($_SESSION['usuari'] === 'admin') { ?>
-                        <a href="Vistes/Usuaris.php"><button>Gestionar usuaris</button></a><br><br>
+                        <a href="Vistes/Usuaris.php"><button>Gestionar usuaris</button></a>
                     <?php } ?>
                 </div>
             </div>
