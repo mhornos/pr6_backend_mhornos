@@ -467,3 +467,8 @@ button:focus, a:focus {
     margin: 0;               /* quita el margen que añadías en .navbar button */
     border-radius: 5px;        /* opcional: que no se vea como "doble borde" */
 }
+
+form.ajax {
+    max-width: none;
+    width: auto;
+}
