@@ -53,6 +53,7 @@ echo "<form method='get' class='controls'>";
 echo "<label for='resultatsPerPagina'>Articles per pàgina:</label>";
 echo "<select name='resultatsPerPagina' id='resultatsPerPagina'>";
 $opcionsArticlesPagina = [5, 10, 15, 20, 25];
+
 foreach ($opcionsArticlesPagina as $opcio) {
     $seleccionat = $resultatsPerPagina === $opcio ? 'selected' : '';
     echo "<option value='$opcio' $seleccionat>$opcio</option>";

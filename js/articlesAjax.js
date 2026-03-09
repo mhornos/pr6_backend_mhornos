@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const q = input.value.trim();
     const limit = limitSelect ? limitSelect.value : "20";
 
-    status.textContent = "Cargando...";
+    status.textContent = "carregant...🔄";
     results.innerHTML = "";
 
     const url = `../api/articles.php?limit=${encodeURIComponent(limit)}&q=${encodeURIComponent(q)}`;
@@ -24,17 +24,17 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       if (!res.ok) {
-        status.textContent = `Error HTTP: ${res.status}`;
+        status.textContent = `error HTTP: ${res.status}❌`;
         return;
       }
 
       const json = await res.json();
 
       const data = Array.isArray(json.data) ? json.data : [];
-      status.textContent = `Resultados: ${data.length}`;
+      status.textContent = `resultats: ${data.length}`;
 
       if (data.length === 0) {
-        results.innerHTML = "<p>No hay resultados.</p>";
+        results.innerHTML = "<p>no hi ha resultats</p>";
         return;
       }
 
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </table>
       `;
     } catch (e) {
-      status.textContent = "Error de red o JSON inválido.";
+      status.textContent = "error de red o JSON invalid";
     }
   }
 
@@ -97,8 +97,10 @@ document.addEventListener("DOMContentLoaded", () => {
     limitSelect.addEventListener("change", loadArticles);
   }
 
-  //enter para buscar ya
+  // evita se reinicie al pulsar enter
   input.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") loadArticles();
-  });
+  if (e.key === "Enter") {
+    e.preventDefault();
+  }
+});
 });

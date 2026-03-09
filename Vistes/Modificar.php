@@ -10,6 +10,9 @@
 
     <link rel="stylesheet" href="..\Estils\estils.css">
 </head>
+
+<script src="../js/modelsApi.js"></script>
+
 <body>
     <!-- formulari per omplir l'id i modificar el titol i el cos -->
     <h2>Modificar vehicle de la BD</h2><br>
@@ -22,6 +25,17 @@
         <label for="marca">Edita la marca:</label>
         <input type="text" id="marca" name="marca" placeholder="Edita la marca" value="<?php echo htmlspecialchars($marca ?? ''); ?>">
         
+        <div style="margin-top: -15px; margin-bottom: 10px;">
+            <button type="button" id="btn-models-api">Buscar models API</button>
+        </div>
+        <p id="models-api-status"></p>
+        <div style="margin-bottom: 15px;">
+            <label for="model_api">Models suggerits per API:</label>
+            <select id="model_api">
+                <option value="">Selecciona un model suggerit</option>
+            </select>
+        </div>
+
         <label for="model">Edita el model:</label>
         <input type="text" id="model" name="model" placeholder="Edita el model" value="<?php echo htmlspecialchars($model ?? ''); ?>">
         

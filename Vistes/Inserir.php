@@ -8,6 +8,9 @@
     <title>mhornos</title>
     <link rel="stylesheet" href="..\Estils\estils.css">
 </head>
+
+<script src="../js/modelsApi.js"></script>
+
 <body>
     <!-- formulari que demana les dades del vehicle per generar un article a la bd -->
     <h2>Inserir vehicle a la BD</h2><br>
@@ -16,6 +19,19 @@
         <table>
         <label for="marca">Marca del vehicle*:</label>
         <input type="text" id="marca" name="marca" placeholder="Introdueix la marca del vehicle*" value="<?php echo htmlspecialchars($marca ?? ''); ?>">
+        
+        <div style="margin-top: -15px; margin-bottom: 10px;">
+            <button type="button" id="btn-models-api">Buscar models API</button>
+        </div>
+        <p id="models-api-status"></p>
+
+        <div style="margin-bottom: 15px;">
+            <label for="model_api">Models suggerits per API:</label>
+            <select id="model_api">
+                <option value="">Selecciona un model suggerit</option>
+            </select>
+        </div>
+        
         
         <label for="model">Model del vehicle*:</label>
         <input type="text" id="model" name="model" placeholder="Introdueix el model del vehicle*" value="<?php echo htmlspecialchars($model ?? ''); ?>">

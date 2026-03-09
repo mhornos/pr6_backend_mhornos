@@ -11,11 +11,11 @@ header('Content-Type: application/json; charset=utf-8');
 try {
     require_once __DIR__ . '/../Model/connexio.php';
     
-    // if (!isset($_SESSION['usuari'])) {
-        // http_response_code(401);
-        // echo json_encode(['error' => 'no autoritzat❌']);
-        // exit;
-    // }
+    if (!isset($_SESSION['usuari'])) {
+        http_response_code(401);
+        echo json_encode(['error' => 'no autoritzat❌']);
+        exit;
+    }
 
     $id = isset($_GET['id']) ? (int)$_GET['id'] : null;
     $q = trim($_GET['q'] ?? '');
