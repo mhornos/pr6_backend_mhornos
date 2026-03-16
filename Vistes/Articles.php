@@ -21,7 +21,7 @@ $returnTo = $_SERVER['REQUEST_URI'];
     <link rel="stylesheet" href="..\Estils\estils.css">
 </head>
 <body>
-    <h2>Gestionar vehicles:</h2><br>
+    <h2>Gestionar vehicles:</h2>
     <table>
         <thead>
             <tr>
@@ -79,6 +79,9 @@ $returnTo = $_SERVER['REQUEST_URI'];
         </tbody>
     </table>
     <br>
-
+    
+    <a href="../Index.php?pagina=<?php echo isset($_GET['pagina']) ? $_GET['pagina'] : 1; ?>">
+                <button>Tornar a inici</button>
+    </a>  
 </body>
 </html>

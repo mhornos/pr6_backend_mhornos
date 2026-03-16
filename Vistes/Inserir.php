@@ -26,7 +26,6 @@
         <p id="models-api-status"></p>
 
         <div style="margin-bottom: 15px;">
-            <label for="model_api">Models suggerits per API:</label>
             <select id="model_api">
                 <option value="">Selecciona un model suggerit</option>
             </select>

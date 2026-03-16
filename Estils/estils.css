@@ -472,3 +472,7 @@ form.ajax {
     max-width: none;
     width: auto;
 }
+
+#models-api-status{
+    margin-bottom: 10px;
+}
