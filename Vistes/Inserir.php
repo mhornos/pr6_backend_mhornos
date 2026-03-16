@@ -51,10 +51,37 @@
         <input type="reset" value="Buidar">
         </table>     
     </form>
+
+    <img id="preview-imatge" class="imatge-preview" src="<?php echo htmlspecialchars($imatge ?? ''); ?>">
+
 <!-- botó per tornar a començar amb l'ultima pagina de la llista escollida-->
     <br><a href="../Index.php?pagina=<?php echo isset($_GET['pagina']) ? $_GET['pagina'] : 1; ?>">
         <button>Tornar a inici</button>
     </a><br>
+
+<!-- script per actualitzar la vista previa de la imatge -->
+    <script>
+       document.addEventListener('DOMContentLoaded', function () {
+           const inputImatge = document.getElementById('imatge');
+           const previewImatge = document.getElementById('preview-imatge');
+
+           function actualitzarPreview() {
+               const url = inputImatge.value.trim();
+
+               if (url === '') {
+                   previewImatge.removeAttribute('src');
+                   return;
+               }
+
+               previewImatge.src = url;
+           }
+
+           inputImatge.addEventListener('input', actualitzarPreview);
+
+           actualitzarPreview();
+       });
+    </script>
+
 </body>
 </html>
 
