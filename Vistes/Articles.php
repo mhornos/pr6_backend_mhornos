@@ -66,7 +66,6 @@ $returnTo = $_SERVER['REQUEST_URI'];
                                 <?php if (!empty($_SESSION['usuari'])) { ?>
                                 <button type="submit" name="boton" value="Editar">Editar</button>
                                 <button type="submit" name="boton" value="Eliminar">Eliminar</button>
-                                <button type="submit" name="boton" value="QR">QR</button>
                                 <?php } ?>
                             </form>
                         </td>
@@ -80,33 +79,6 @@ $returnTo = $_SERVER['REQUEST_URI'];
         </tbody>
     </table>
     <br>
-    <!-- AJAX -->
-
-     <form class="ajax">
-            <section style="margin: 20px 0;">
-          <h2>Cerca amb AJAX:</h2>
-
-          <label for="ajax-q">Buscar:</label>
-          <input id="ajax-q" type="text" placeholder="marca, model, matrícula, usuari...">
-
-          <label for="ajax-limit">Limit:</label>
-          <select id="ajax-limit">
-            <option value="5">5</option>
-            <option value="10">10</option>
-            <option value="20" selected>20</option>
-            <option value="50">50</option>
-          </select>
-
-          <p id="ajax-status" style="margin-top:10px;"></p>
-          <div id="ajax-results"></div>
-        </section>
-    </form> 
-
-    <a href="../Index.php?pagina=<?php echo isset($_GET['pagina']) ? $_GET['pagina'] : 1; ?>">
-            <button>Tornar a inici</button>
-    </a>    
-
-    <script src="../js/articlesAjax.js"></script>
 
 </body>
 </html>

@@ -14,8 +14,8 @@ function obtenirTotalArticles($usuariLoguejat = null, $cercaCriteri = '') {
             $consulta .= " AND (marca LIKE :criteri OR model LIKE :criteri OR any LIKE :criteri OR color LIKE :criteri OR matricula LIKE :criteri OR nom_usuari LIKE :criteri)";
         }
 
-        // si l'usuari està loguejat, es filtra per nom_usuari
-        if ($usuariLoguejat) {
+        // si l'usuari està loguejat i NO és admin, es filtra pels seus articles
+        if ($usuariLoguejat && $usuariLoguejat !== 'admin') {
             $consulta .= " AND nom_usuari = :nom_usuari";
         }
 
@@ -26,7 +26,7 @@ function obtenirTotalArticles($usuariLoguejat = null, $cercaCriteri = '') {
         if ($cercaCriteri) {
             $consultaTotal->bindValue(':criteri', '%' . $cercaCriteri . '%', PDO::PARAM_STR);
         }
-        if ($usuariLoguejat) {
+        if ($usuariLoguejat && $usuariLoguejat !== 'admin') {
             $consultaTotal->bindValue(':nom_usuari', $usuariLoguejat, PDO::PARAM_STR);
         }
 
@@ -34,7 +34,7 @@ function obtenirTotalArticles($usuariLoguejat = null, $cercaCriteri = '') {
         $consultaTotal->execute();
         return $consultaTotal->fetchColumn();
     } catch (PDOException $e) {
-        echo "Error de connexió: " . $e->getMessage() . " ❌";
+        echo "error de connexió: " . $e->getMessage() . " ❌";
     }
 }
 
@@ -69,8 +69,8 @@ function obtenirArticles($paginaActual, $resultatsPerPagina, $criteriOrdenacio, 
             $consulta .= " AND (a.marca LIKE :criteri OR a.model LIKE :criteri OR a.any LIKE :criteri OR a.color LIKE :criteri OR a.matricula LIKE :criteri OR a.nom_usuari LIKE :criteri)";
         }
         
-        // filtrar per l'usuari loguejat
-        if ($usuariLoguejat) {
+        // si l'usuari està loguejat i NO és admin, només veu els seus articles
+        if ($usuariLoguejat && $usuariLoguejat !== 'admin') {
             $consulta .= " AND a.nom_usuari = :nom_usuari";
         }
 
@@ -89,7 +89,7 @@ function obtenirArticles($paginaActual, $resultatsPerPagina, $criteriOrdenacio, 
         if ($cercaCriteri) {
             $consulta->bindValue(':criteri', '%' . $cercaCriteri . '%', PDO::PARAM_STR);
         }
-        if ($usuariLoguejat) {
+        if ($usuariLoguejat && $usuariLoguejat !== 'admin') {
             $consulta->bindValue(':nom_usuari', $usuariLoguejat, PDO::PARAM_STR);
         }
 
@@ -102,7 +102,7 @@ function obtenirArticles($paginaActual, $resultatsPerPagina, $criteriOrdenacio, 
         
         return $consulta->fetchAll(PDO::FETCH_ASSOC);
     } catch (PDOException $e) {
-        echo "Error de connexió: " . $e->getMessage() . " ❌";
+        echo "error de connexió: " . $e->getMessage() . " ❌";
     }
 }
 

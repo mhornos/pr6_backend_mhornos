@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     selectModels.innerHTML = '<option value="">Selecciona un model</option>';
 
     if (marca === "") {
-      status.textContent = "escriu una marca primer❌\n\n";
+      status.textContent = "escriu una marca primer❌";
       return;
     }
 

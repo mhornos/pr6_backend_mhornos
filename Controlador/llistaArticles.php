@@ -143,7 +143,6 @@ echo "<div class='articles-container'>";
                     <button type="submit" name="boton" value="Eliminar">Eliminar</button>
                     ';
                 }
-                echo "<button type='submit' name='boton' value='QR'>QR</button>";
                 echo '</form>';
 
             echo "</div>";

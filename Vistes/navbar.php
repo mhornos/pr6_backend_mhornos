@@ -34,6 +34,7 @@ require_once "Model/editarPerfil.php";
                     <!-- mostrar només si l'usuari és "admin" -->
                     <?php if ($_SESSION['usuari'] === 'admin') { ?>
                         <a href="Vistes/Usuaris.php"><button>Gestionar usuaris</button></a>
+                        <a href="Vistes/busquedaAjax.php"><button>Llista de vehicles</button></a>
                     <?php } ?>
                 </div>
             </div>

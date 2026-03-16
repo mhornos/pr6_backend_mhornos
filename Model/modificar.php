@@ -43,8 +43,8 @@ function modificarArticle($marca, $model, $any, $color, $matricula, $imatge, $id
             $article = $consultaExistencia->fetch(PDO::FETCH_ASSOC);
             $usuariCreador = $article['nom_usuari'];
 
-            // i comprovem si l'usuari de la sessió és el mateix que el creador de l'article
-            if ($usuari !== $usuariCreador) {
+            // l'article el pot modificar el creador o admin
+            if ($usuari !== $usuariCreador && $usuari !== 'admin') {
                 $errors[] = "no tens permís per modificar aquest article ❌";
             }
         }
