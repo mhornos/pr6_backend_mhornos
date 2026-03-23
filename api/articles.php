@@ -1,6 +1,6 @@
 <?php
 
-// proveir api propia per consultar els meus articles en format json
+// api rest: proveir api propia per consultar els meus articles en format json
 
 declare(strict_types=1);
 
@@ -16,7 +16,7 @@ try {
     // carrega la connexio a la base de dades
     require_once __DIR__ . '/../Model/connexio.php';
     
-    // comprova que l'usuari estigui autenticata
+    // comprova que l'usuari estigui autenticat
     if (!isset($_SESSION['usuari'])) {
         echo json_encode(['error' => 'no autoritzat❌']);
         exit;
