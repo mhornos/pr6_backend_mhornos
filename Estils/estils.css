@@ -470,7 +470,7 @@ button:focus, a:focus {
 
 form.ajax {
     max-width: none;
-    width: auto;
+    min-width: 500px;
 }
 
 #models-api-status{

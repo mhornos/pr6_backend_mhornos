@@ -10,6 +10,8 @@
 </head>
 
 <script src="../js/modelsApi.js"></script>
+<script src="../js/imagePreview.js"></script>
+
 
 <body>
     <!-- formulari que demana les dades del vehicle per generar un article a la bd -->
@@ -58,29 +60,6 @@
     <br><a href="../Index.php?pagina=<?php echo isset($_GET['pagina']) ? $_GET['pagina'] : 1; ?>">
         <button>Tornar a inici</button>
     </a><br>
-
-<!-- script per actualitzar la vista previa de la imatge -->
-    <script>
-       document.addEventListener('DOMContentLoaded', function () {
-           const inputImatge = document.getElementById('imatge');
-           const previewImatge = document.getElementById('preview-imatge');
-
-           function actualitzarPreview() {
-               const url = inputImatge.value.trim();
-
-               if (url === '') {
-                   previewImatge.removeAttribute('src');
-                   return;
-               }
-
-               previewImatge.src = url;
-           }
-
-           inputImatge.addEventListener('input', actualitzarPreview);
-
-           actualitzarPreview();
-       });
-    </script>
 
 </body>
 </html>
