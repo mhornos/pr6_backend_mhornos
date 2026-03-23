@@ -1,8 +1,8 @@
-# Pràctica de Backend pr5
+# Pràctica de Backend pr6
 
 ## Descripció del projecte
 Aquesta pràctica consisteix en la creació d'una aplicació web senzilla per gestionar articles utilitzant PHP i MySQL.
-La web consisteix en gestor de vehicles a mecanics administrador de garatges de diferents ciutats ,aquesta permet als usuaris registrar les seves dades i pujar vehicles associats a ells. Utilitza una base de dades MySQL i està desenvolupada amb PHP i HTML/CSS. Els articles es componen de diversos camps, incloent marca, model, color, matrícula i imatge, i ara inclou funcionalitats de Paginació, Sessions i Cookies per millorar l'experiència de l'usuari.
+La web consisteix en gestor de vehicles a mecanics administrador de garatges de diferents ciutats ,aquesta permet als usuaris registrar les seves dades i pujar vehicles associats a ells. Utilitza una base de dades MySQL i està desenvolupada amb PHP i HTML/CSS. Els articles es componen de diversos camps, incloent marca, model, color, matrícula i imatge, i ara inclou funcionalitats de Paginació, Sessions, Cookies, APIs i AJAX per millorar l'experiència de l'usuari.
 
 
 ## Funcionalitats implementades
@@ -16,6 +16,10 @@ La web consisteix en gestor de vehicles a mecanics administrador de garatges de 
 8. **Paginació d'Articles**: Navegació entre diferents pàgines d'articles.
 9. **Estil i Disseny**: Interfície d'usuari millorada amb CSS.
 10. **Comprovacions d'errors**: Gestió d'errors durant la inserció d'articles i usuaris.
+11. **API pròpia (REST)**: S'ha implementat una API REST en PHP que permet consultar els articles en format JSON mitjançant peticions HTTP GET (`api/articles.php`), amb filtres per id, cerca i limit, i control d'accés segons l'usuari.
+12. **Consum d'API externa**: Integració d'una API externa de vehicles (vPIC - NHTSA) per obtenir models de cotxes segons la marca introduïda, mitjançant un endpoint intermedi propi (`api/modelsByMake.php`).
+13. **AJAX (fetch)**: Implementació de peticions asíncrones amb JavaScript (`fetch`) per realitzar cerques en temps real i obtenir dades sense recarregar la pàgina.
+14. **Testing amb Postman**: Ús de Postman per provar els endpoints de la API, validant respostes JSON i codis d'estat HTTP.
 
 
 ## Instal·lació i Ús
@@ -31,4 +35,3 @@ La web consisteix en gestor de vehicles a mecanics administrador de garatges de 
    - Obrir el navegador i accedir a `http://localhost`.
 5. **Reemplaçar l'env example**
    - Renombrar el fitxer `env-example.php` a `env.php` i afegir els parametres propis dins d'aquest.
-
