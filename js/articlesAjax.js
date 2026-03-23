@@ -1,44 +1,56 @@
+// ajax per consumir la api propia i mostrar la llista de vehicles
 
 document.addEventListener("DOMContentLoaded", () => {
+  // selecciona els elements del html
   const input = document.querySelector("#ajax-q");
   const limitSelect = document.querySelector("#ajax-limit");
   const results = document.querySelector("#ajax-results");
   const status = document.querySelector("#ajax-status");
 
+  // si falta algun element basic, atura el codi
   if (!input || !results || !status) return;
 
+  // variable per controlar el debounce
   let debounceTimer = null;
 
   async function loadArticles() {
+    // llegeix el text de cerca i el limit
     const q = input.value.trim();
     const limit = limitSelect ? limitSelect.value : "20";
 
+    // mostra estat de carrega i neteja resultats
     status.textContent = "carregant...🔄";
     results.innerHTML = "";
 
+    // construeix la url de la peticio
     const url = `../api/articles.php?limit=${encodeURIComponent(limit)}&q=${encodeURIComponent(q)}`;
 
     try {
+      // fa la peticio a l'api
       const res = await fetch(url, {
         headers: { "Accept": "application/json" }
       });
 
+      // controla errors http
       if (!res.ok) {
         status.textContent = `error HTTP: ${res.status}❌`;
         return;
       }
 
+      // converteix la resposta a json
       const json = await res.json();
 
+      // assegura que data sigui un array
       const data = Array.isArray(json.data) ? json.data : [];
       status.textContent = `resultats: ${data.length}`;
 
+      // si no hi ha resultats, ho mostra
       if (data.length === 0) {
         results.innerHTML = "<p>no hi ha resultats</p>";
         return;
       }
 
-      //render
+      // genera les files de la taula i printa la taula
       const rowsHtml = data.map(a => `
         <tr>
           <td>${escapeHtml(a.ID)}</td>
@@ -75,6 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function escapeHtml(v) {
+    // evita injectar html al mostrar dades
     return String(v ?? "")
       .replaceAll("&", "&amp;")
       .replaceAll("<", "&lt;")
@@ -83,21 +96,21 @@ document.addEventListener("DOMContentLoaded", () => {
       .replaceAll("'", "&#039;");
   }
 
-  //cargar al entrar
+  // carrega dades en entrar a la pagina
   loadArticles();
 
-  //debounce al escribir
+  // espera una mica abans de buscar mentre s'escriu
   input.addEventListener("input", () => {
     clearTimeout(debounceTimer);
     debounceTimer = setTimeout(loadArticles, 250);
   });
 
-  //si se cambia el limit
+  // torna a carregar si canvia el limit
   if (limitSelect) {
     limitSelect.addEventListener("change", loadArticles);
   }
 
-  // evita se reinicie al pulsar enter
+  // evita que enter reinicii el formulari
   input.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
     e.preventDefault();
