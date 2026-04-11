@@ -16,6 +16,9 @@ define('BASE_URL', 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SEL
 define("clauSecreta", "");
 
 //oauth
-define("oAuthClientID", "678152750720-upk97acgc98geu7nnrcuekug98v2ht92.apps.googleusercontent.com");
-define("oAuthClientSecret","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");
+define("oAuthClientID", "");
+define("oAuthClientSecret","");
+
+// clau secreta per signar els jwt
+define('JWT_SECRET', '');
 ?>

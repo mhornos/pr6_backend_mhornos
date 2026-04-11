@@ -63,5 +63,10 @@ ALTER TABLE `article`
 ALTER TABLE `usuaris`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
+-- columnas de autenticación para la api con jwt
+ALTER TABLE usuaris
+ADD COLUMN api_jwt TEXT DEFAULT NULL,
+ADD COLUMN api_jwt_expiracio DATETIME DEFAULT NULL;
+
 -- Confirmar transacción
 COMMIT;

@@ -20,6 +20,7 @@ La web consisteix en gestor de vehicles a mecanics administrador de garatges de 
 12. **Consum d'API externa**: Integració d'una API externa de vehicles (vPIC - NHTSA) per obtenir models de cotxes segons la marca introduïda, mitjançant un endpoint intermedi propi (`api/modelsByMake.php`).
 13. **AJAX (fetch)**: Implementació de peticions asíncrones amb JavaScript (`fetch`) per realitzar cerques en temps real i obtenir dades sense recarregar la pàgina.
 14. **Testing amb Postman**: Ús de Postman per provar els endpoints de la API, validant respostes JSON i codis d'estat HTTP.
+15. **Seguretat API amb JWT**: S'ha implementat autenticació mitjançant JSON Web Token (JWT) amb ús de Bearer Token en capçaleres HTTP, incloent validació, expiració i rotació de tokens per millorar la seguretat de l'accés als endpoints.
 
 
 ## Instal·lació i Ús
